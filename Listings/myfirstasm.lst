@@ -1,0 +1,45 @@
+A51 MACRO ASSEMBLER  MYFIRSTASM                                                           08/10/2024 17:38:59 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\myfirstasm.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE myfirstasm.a51 SET(SMALL) DEBUG PRINT(.\Listings\myfirstasm.lst) OBJECT
+                      (.\Objects\myfirstasm.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000                   1     ORG 0H
+0000 7400              2     MOV A,#00H
+0002 F5A0              3     MOV P2,A
+0004 750000            4     BACK:MOV P2.6,#0B
+*** __________________________________^
+*** ERROR #A48 IN 4 (myfirstasm.a51, LINE 4): DATA-ADDRESS EXPECTED
+0007 7100              5     ACALL DELAY
+0009 750001            6     MOV P2.6,#1B
+*** _____________________________^
+*** ERROR #A48 IN 6 (myfirstasm.a51, LINE 6): DATA-ADDRESS EXPECTED
+000C 7100              7     ACALL DELAY
+000E 80F4              8     SJMP BACK
+0300                   9     ORG 300H
+0300 7DFF             10             DELAY:MOV R5,#0FFH
+0302 DDFE             11             AGAIN: DJNZ R5,AGAIN
+0304 22               12             RET
+                      13     END
+A51 MACRO ASSEMBLER  MYFIRSTASM                                                           08/10/2024 17:38:59 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0302H   A   
+BACK . . . . . . .  C ADDR   0004H   A   
+DELAY. . . . . . .  C ADDR   0300H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 2 ERROR(S)

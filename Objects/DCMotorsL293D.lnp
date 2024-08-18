@@ -1,0 +1,3 @@
+".\Objects\dcmotors.obj" 
+TO ".\Objects\DCMotorsL293D" 
+PRINT(".\Listings\DCMotorsL293D.m51")

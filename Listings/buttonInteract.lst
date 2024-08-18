@@ -1,0 +1,38 @@
+C51 COMPILER V9.60.7.0   BUTTONINTERACT                                                    08/11/2024 01:39:23 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE BUTTONINTERACT
+OBJECT MODULE PLACED IN .\Objects\buttonInteract.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE buttonInteract.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Lis
+                    -tings\buttonInteract.lst) TABS(2) OBJECT(.\Objects\buttonInteract.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          sbit led=P2^3;
+   3          sbit sWitch=P2^4;
+   4          void main(void){
+   5   1      //  P2=0x00;
+   6   1        while(1){
+   7   2          if (sWitch==1){
+   8   3            led=0;
+   9   3          }
+  10   2          else{
+  11   3            led=1;  
+  12   3          }
+  13   2        }     
+  14   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     11    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

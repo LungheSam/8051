@@ -1,0 +1,123 @@
+C51 COMPILER V9.60.7.0   7SEGMENTS                                                         08/11/2024 02:53:26 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE 7SEGMENTS
+OBJECT MODULE PLACED IN .\Objects\7segments.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE 7segments.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings
+                    -\7segments.lst) TABS(2) OBJECT(.\Objects\7segments.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          void delay(unsigned int ms);
+   3          sbit switchButton=P1^0;
+   4          sbit led=P1^1;
+   5          unsigned int buttonNumber;
+   6          void main(void){
+   7   1        
+   8   1        P2=0x00;
+   9   1        led=0;
+  10   1        buttonNumber=0;
+  11   1        while(1){
+  12   2          /*
+  13   2          P2=0x3f;//0011 1111
+  14   2          delay(300);
+  15   2          P2=0x06;//0000 0110
+  16   2          delay(300);
+  17   2          P2=0x5b;//0101 1011
+  18   2          delay(300);
+  19   2          P2=0x4f;//0100 1111
+  20   2          delay(300);
+  21   2          P2=0x66;//0110 0110
+  22   2          delay(300);
+  23   2          P2=0x6d;//0110 1101
+  24   2          delay(300);
+  25   2          P2=0x7d;//0111 1101
+  26   2          delay(300);
+  27   2          P2=0x07;//0000 0111
+  28   2          delay(300);
+  29   2          P2=0x7f;//0111 1111
+  30   2          delay(300);
+  31   2          P2=0x6f;//0110 1111
+  32   2          delay(300);
+  33   2          */
+  34   2          led=switchButton?0:1;
+  35   2          if(led){
+  36   3            buttonNumber=buttonNumber+1;
+  37   3            if(buttonNumber>9){
+  38   4              buttonNumber=0;
+  39   4            }
+  40   3          }
+  41   2          switch(buttonNumber){
+  42   3            case 0:
+  43   3              P2=0x3f;//0011 1111
+  44   3              delay(50);
+  45   3              break;
+  46   3            case 1:
+  47   3              P2=0x06;//0000 0110
+  48   3              delay(50);
+  49   3              break;
+  50   3            case 2:
+  51   3              P2=0x5b;//0101 1011
+  52   3              delay(50);
+  53   3              break;
+  54   3            case 3:
+C51 COMPILER V9.60.7.0   7SEGMENTS                                                         08/11/2024 02:53:26 PAGE 2   
+
+  55   3              P2=0x4f;//0100 1111
+  56   3              delay(50);
+  57   3              break;
+  58   3            case 4:
+  59   3              P2=0x66;//0110 0110 
+  60   3              delay(50);
+  61   3              break;
+  62   3            case 5:
+  63   3              P2=0x6d;//0110 1101
+  64   3              delay(50);
+  65   3              break;
+  66   3            case 6:
+  67   3              P2=0x7d;//0111 1101
+  68   3              delay(50);
+  69   3              break;
+  70   3            case 7:
+  71   3              P2=0x07;//0000 0111
+  72   3              delay(50);
+  73   3              break;
+  74   3            case 8:
+  75   3              P2=0x7f;//0111 1111
+  76   3              delay(100);
+  77   3              break;
+  78   3            case 9:
+  79   3              P2=0x6f;//0110 1111
+  80   3              delay(50);
+  81   3              break;
+  82   3            default :
+  83   3              P2=0x3f;  
+  84   3              delay(50);
+  85   3              break;
+  86   3            }
+  87   2          
+  88   2          
+  89   2          
+  90   2        }
+  91   1      }
+  92          void delay(unsigned int ms){
+  93   1        unsigned int i,j;
+  94   1        for (i=0;i<ms;i++){
+  95   2          for (j=0;j<1275;j++);
+  96   2        }
+  97   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    196    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =      2    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

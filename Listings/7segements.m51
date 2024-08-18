@@ -1,0 +1,148 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    08/11/2024  02:53:26  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\7segments.obj TO .\Objects\7segements PRINT (.\Listings\7segements.m51)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\7segments.obj (7SEGMENTS)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+
+
+LINK MAP OF MODULE:  .\Objects\7segements (7SEGMENTS)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0002H     UNIT         ?DT?7SEGMENTS
+            IDATA   000AH     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     00A4H     UNIT         ?PR?MAIN?7SEGMENTS
+            CODE    08A4H     0020H     UNIT         ?PR?_DELAY?7SEGMENTS
+            CODE    08C4H     000CH     UNIT         ?C_C51STARTUP
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\7segements (7SEGMENTS)
+
+
+SEGMENT
+  +--> CALLED SEGMENT
+---------------------
+?C_C51STARTUP
+  +--> ?PR?MAIN?7SEGMENTS
+
+?PR?MAIN?7SEGMENTS
+  +--> ?PR?_DELAY?7SEGMENTS
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\7segements (7SEGMENTS)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        7SEGMENTS
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  D:0008H         PUBLIC        buttonNumber
+  C:08A4H         PUBLIC        _delay
+  B:0090H.0       PUBLIC        switchButton
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/11/2024  02:53:26  PAGE 2
+
+
+  C:0800H         PUBLIC        main
+  B:0090H.1       PUBLIC        led
+  -------         PROC          MAIN
+  C:0800H         LINE#         6
+  C:0800H         LINE#         8
+  C:0803H         LINE#         9
+  C:0805H         LINE#         10
+  C:0809H         LINE#         11
+  C:0809H         LINE#         34
+  C:0812H         LINE#         35
+  C:0815H         LINE#         36
+  C:081DH         LINE#         37
+  C:0826H         LINE#         38
+  C:082BH         LINE#         39
+  C:082BH         LINE#         40
+  C:082BH         LINE#         41
+  C:085BH         LINE#         42
+  C:085BH         LINE#         43
+  C:085EH         LINE#         44
+  C:085EH         LINE#         45
+  C:0860H         LINE#         46
+  C:0860H         LINE#         47
+  C:0863H         LINE#         48
+  C:0863H         LINE#         49
+  C:0865H         LINE#         50
+  C:0865H         LINE#         51
+  C:0868H         LINE#         52
+  C:0868H         LINE#         53
+  C:086AH         LINE#         54
+  C:086AH         LINE#         55
+  C:086DH         LINE#         56
+  C:086DH         LINE#         57
+  C:086FH         LINE#         58
+  C:086FH         LINE#         59
+  C:0872H         LINE#         60
+  C:0872H         LINE#         61
+  C:0874H         LINE#         62
+  C:0874H         LINE#         63
+  C:0877H         LINE#         64
+  C:0877H         LINE#         65
+  C:0879H         LINE#         66
+  C:0879H         LINE#         67
+  C:087CH         LINE#         68
+  C:087CH         LINE#         69
+  C:087EH         LINE#         70
+  C:087EH         LINE#         71
+  C:0881H         LINE#         72
+  C:0881H         LINE#         73
+  C:0883H         LINE#         74
+  C:0883H         LINE#         75
+  C:0886H         LINE#         76
+  C:0888H         LINE#         77
+  C:088AH         LINE#         78
+  C:088AH         LINE#         79
+  C:088DH         LINE#         80
+  C:0894H         LINE#         81
+  C:0897H         LINE#         82
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/11/2024  02:53:26  PAGE 3
+
+
+  C:0897H         LINE#         83
+  C:089AH         LINE#         84
+  C:08A1H         LINE#         85
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        ms
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:08A4H         LINE#         92
+  C:08A4H         LINE#         94
+  C:08AEH         LINE#         95
+  C:08BCH         LINE#         96
+  C:08C3H         LINE#         97
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        7SEGMENTS
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00C4H BYTE ( 9%) *
+******************************************************************************
+
+Program Size: data=11.0 xdata=0 code=211
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

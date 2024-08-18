@@ -1,0 +1,65 @@
+C51 COMPILER V9.60.7.0   DCMOTORS                                                          08/11/2024 03:46:58 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE DCMOTORS
+OBJECT MODULE PLACED IN .\Objects\dcmotors.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE dcmotors.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -dcmotors.lst) TABS(2) OBJECT(.\Objects\dcmotors.obj)
+
+line level    source
+
+   1          #include <reg51.h>
+   2          
+   3          void delay(unsigned int ms){
+   4   1        unsigned int i,j;
+   5   1        for(i=0;i<ms;i++){
+   6   2          for (j=0;j<1275;j++);
+   7   2        }
+   8   1      }
+   9          void main(void){
+  10   1        P2=0x00;
+  11   1        P1-0x00;
+*** WARNING C275 IN LINE 11 OF dcmotors.c: expression with possibly no effect
+  12   1        while(1){
+  13   2          //forward 0000 1010
+  14   2          P2=0x0A;
+  15   2          P1=0x71;//F: 0111 0001 
+  16   2          delay(1000);
+  17   2          
+  18   2          //backward 0000 0101
+  19   2          P2=0x05;
+  20   2          P1=0xff;//B: 0111 1111 
+  21   2          delay(1000);
+  22   2          //stop 0000 0000 
+  23   2          P2=0x00;
+  24   2          P1=0x6d;//S: 0110 1101
+  25   2          delay(1000);
+  26   2          //Left 0000 0110 
+  27   2          P2=0x06;
+  28   2          P1=0x38;//L: 0011 1000
+  29   2          delay(1000);
+  30   2          //Right 0000 1001 
+  31   2          P2=0x09;
+  32   2          P1=0x77;//R: 0111 0111
+  33   2          delay(1000);
+  34   2          //stop 0000 0000 
+  35   2          P2=0x00;
+  36   2          P1=0x6d;//S: 0110 1101
+  37   2          delay(1000);
+  38   2          
+  39   2        }
+  40   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     86    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  1 WARNING(S),  0 ERROR(S)

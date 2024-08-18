@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\myfirstasm.obj" 
+TO ".\Objects\MyFirstProgram" 
+PRINT(".\Listings\MyFirstProgram.m51")
